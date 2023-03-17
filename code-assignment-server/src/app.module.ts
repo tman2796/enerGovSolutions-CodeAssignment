@@ -15,10 +15,10 @@ import { ManagerModule } from './manager/manager.module';
     EmployeeModule,
     TypeOrmModule.forRoot({
       type: 'mssql',
-      host: 'BRICKTAMLAND308',
+      host: 'localhost',
       port: 1433,
-      username: 'Code-Assignment',
-      password: '123456',
+      username: 'sa',
+      password: 'sa',
       database: 'enerGovSolutions',
       entities: [
         EmployeeEntity,

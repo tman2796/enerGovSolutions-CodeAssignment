@@ -1,14 +1,14 @@
 import { Entity, Column } from 'typeorm';
 
 @Entity({
-    name: 'dbo.manager'
+    name: 'dbo.managers'
 })
 
 export class ManagerEntity {
     @Column()
-    id: number;
+    manager_id: number;
 
     @Column()
-    employeeId: number;
+    employee_Id: number;
 
 }

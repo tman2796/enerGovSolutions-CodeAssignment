@@ -5,5 +5,5 @@ export interface EmployeeDto {
     firstName: string;
     lastName: string;
     isManager: boolean;
-    roles?: RoleDto[];
+    roles: RoleDto[];
 }

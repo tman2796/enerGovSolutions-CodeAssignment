@@ -1,7 +1,7 @@
 import { Entity, Column } from 'typeorm';
 
 @Entity({
-    name: 'dbo.role'
+    name: 'dbo.roles'
 })
 
 export class RoleEntity {

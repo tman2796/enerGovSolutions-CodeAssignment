@@ -9,6 +9,6 @@ export class RoleService {
       @InjectRepository(RoleEntity)
         private readonly roleRepository: Repository<RoleEntity>){}
   findAll(): Promise<RoleEntity[]> {
-    return this.roleRepository.find();
+    return this.roleRepository.query('SELECT * FROM roles');
   }
 }

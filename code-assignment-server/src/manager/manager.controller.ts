@@ -15,9 +15,11 @@ export class ManagerController {
         private readonly roleService: RoleService){}
     @Get()
     async getManagers(): Promise<ManagerDto[]> {
-        const managerEntities = this.managerService.findAll();
-        const managerList = (await managerEntities).map((manager: ManagerEntity, index) => {
-            const managerDto: ManagerDto = {managerId: manager.id, roles: [], employees: [], 
+        const managerEntities = await this.managerService.findAll();
+        const employeeIds = await this.employeeService.findAllEmployeeIds();
+        const managerList = managerEntities.map((manager: ManagerEntity, index) => {
+            const employeeId = employeeIds.find((employeeIdEntity : number) => employeeIdEntity === manager.employee_Id);
+            const managerDto: ManagerDto = { managerId: manager.manager_id, roles: [], employees: [], 
                 firstName: 'testFirstName', lastName: 'testLastName',isManager: true, id: index  }
                 return managerDto; 
         })

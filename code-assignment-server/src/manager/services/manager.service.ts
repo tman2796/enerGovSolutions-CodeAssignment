@@ -9,6 +9,6 @@ export class ManagerService {
       @InjectRepository(ManagerEntity)
         private readonly managerRepository: Repository<ManagerEntity>){}
   findAll(): Promise<ManagerEntity[]> {
-    return this.managerRepository.find();
+    return this.managerRepository.query('SELECT * FROM managers');
   }
 }

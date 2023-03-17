@@ -1,7 +1,7 @@
 import { Entity, Column } from 'typeorm';
 
 @Entity({
-    name: 'dbo.employee'
+    name: 'dbo.employees'
 })
 
 export class EmployeeEntity {
@@ -9,17 +9,11 @@ export class EmployeeEntity {
     id: number;
 
     @Column()
-    firstName: string;
+    first_name: string;
 
     @Column()
-    lastName: string;
+    last_name: string;
     
     @Column()
-    isManager: boolean;
-
-    @Column()
-    roleId: string;
-    
-    @Column()
-    managerId: number;
+    manager_id: number;
 }
